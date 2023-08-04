@@ -3,7 +3,7 @@ services:
   Signal-Server-NGINX:
     image: nginx:latest
     volumes:
-      - ~/Work/Signal-Server/nginx/nginx-conf/:/etc/nginx/conf.d/
-      - ~/Work/Signal-Server/nginx/up1/:/data/up1/
+      - /home/andya/Work/Signal-Server/nginx/nginx-conf:/etc/nginx/conf.d
+      - /home/andya/Work/Signal-Server/nginx/up1:/data/up1
     ports:
       - '127.0.0.1:80:80'

@@ -51,3 +51,9 @@ This script just calls a one-liner `docker-compose up --no-log-prefix` and runs 
 - Currently the long datadog failed html output is the only thing omitted (since it throws 100 lines of code every couple of seconds and provides no useful info)
 
 - Also colors the words `INFO`, `WARN`, and `ERROR` to green, orange, and red respectively to make it easier to read the server's logs
+
+# To Do
+
+## Signal-Server
+
+- Use [this EC2 spoofer tool](https://github.com/lyft/metadataproxy) to make the docker container work
