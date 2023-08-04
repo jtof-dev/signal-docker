@@ -1,9 +1,10 @@
 version: '3'
 services:
-  Signal-Server-NGINX:
-    image: nginx:latest
-    volumes:
-      - /home/andya/Work/Signal-Server/nginx/nginx-conf:/etc/nginx/conf.d
-      - /home/andya/Work/Signal-Server/nginx/up1:/data/up1
+  local-nginx:
+    image: local-nginx:1.0
     ports:
-      - '127.0.0.1:80:80'
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./html:/usr/share/nginx/html:ro
+      - ./nginx-custom.conf:/etc/nginx/conf.d/nginx-custom.conf:ro 
