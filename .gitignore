@@ -1,4 +1,4 @@
 .vscode
 .DS_Store
-personal-config/*
-!personal-config/config
+Signal-Server/personal-config/*
+!Signal-Server/personal-config/config
