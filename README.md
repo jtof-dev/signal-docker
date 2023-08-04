@@ -1,10 +1,14 @@
-# Signal-Server Docker
+# Signal-Docker
 
-- A docker container for Signal-Server v9.81.0 running on Eclipse Temurin
+- A repo containing all the (created) Docker containers related to the Signal-Project
 
-# Installation
+# Signal-Server
+
+Note: Signal-Server-Docker has not been updated to use an IAM compatible container (so for the moment Signal-Server will have to be run in EC2 on their bare metal, though I will get around to it)
 
 ## Compilation
+
+`cd Signal-Server`
 
 Create a `signal-server` Docker image:
 
@@ -14,11 +18,7 @@ docker build --no-cache -t signal-server:1.0 .
 
 If you need to reinstall, first run `docker rmi -f signal-server:1.0`
 
-Generate the correct cluster volumes:
-
-```
-docker compose -f docker-compose-first-run.yml up -d && docker compose -f docker-compose-first-run.yml down
-```
+Generate the correct cluster volumes with `bash docker-compose-first-run.sh`
 
 If you call the main `docker-compose.yml` instead of `docker-compose-first-run.yml`, the server will fail with an error related to not being able to connect to the redis cluster
 
