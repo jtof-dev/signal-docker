@@ -1,10 +1,17 @@
 version: '3'
+
 services:
-  local-nginx:
-    image: local-nginx:1.0
+  nginx:
+    image: jonasal/nginx-certbot:4.3.0
+    restart: unless-stopped
+    env_file:
+      - ./nginx-certbot.env
     ports:
-      - "80:80"
-      - "443:443"
+      - 80:80
+      - 443:443
     volumes:
-      - ./html:/usr/share/nginx/html:ro
-      - ./nginx-custom.conf:/etc/nginx/conf.d/nginx-custom.conf:ro 
+      - nginx_secrets:/etc/letsencrypt
+      - ./user_conf.d:/etc/nginx/user_conf.d
+
+volumes:
+  nginx_secrets:
