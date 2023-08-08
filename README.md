@@ -32,12 +32,26 @@ The full Signal-Project consists of two main branches: the user-facing apps and 
 
 ### Signal-Server
 
-- [dockerized](Signal-Server/documentation.md)
+[dockerized](Signal-Server/documentation.md)
 
-- [full instructions](https://github.com/JJTofflemire/Signal-Server)
+- This docker container has not been updated to use an IAM compatible container. if YOU (uncle sam moment) want to implement this, you need to run [this docker image](https://github.com/lyft/metadataproxy) with some configuration alongside dockerized Signal-Server
+
+- This container also probably needs to change how it handles creating the image: as it is currently, it creates a new server with new server-specific certificates. Switching to a two-part build-then-run process would address this, as well as add the ability to pass in your pre-existing signal-server.jar at runtime
+
+[full instructions](https://github.com/JJTofflemire/Signal-Server)
+
+- This repo contains a LOT of information about the server, setting it up, running it and more (yippee). It has turned into a bit of a mess, though I have tried to put the easy bits first without removing any manual documentation
 
 ## Others
 
-### NGNIX
+### NGNIX with Certbot
 
-- [dockerized docs](nginx/documentation.md)
+[dockerized docs](nginx/documentation.md)
+
+- [This docker image](https://github.com/JonasAlfredsson/docker-nginx-certbot/tree/master) handles the annoying bits of deploying NGINX and automates getting and renewing `https` certificates
+
+- The image passes in any custom configuration files at runtime, allowing for ease of use in addition to being dead simple to set up
+
+## To Do
+
+- Run, configure, and dockerize registation-service

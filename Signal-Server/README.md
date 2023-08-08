@@ -1,7 +1,5 @@
 # Signal-Server Dockerized!
 
-Note: Signal-Server-Docker has not been updated to use an IAM compatible container
-
 ## Compilation
 
 `cd Signal-Server`
@@ -53,3 +51,5 @@ This script just calls a one-liner `docker-compose up --no-log-prefix` and runs 
 ## Signal-Server
 
 - Use [this EC2 spoofer tool](https://github.com/lyft/metadataproxy) to make the docker container work
+
+- Rewrite the docker container to just build a server, and have another java image run it
