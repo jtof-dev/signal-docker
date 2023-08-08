@@ -1,0 +1,1 @@
+tentative docker-compose for registration-service (dev environment)
