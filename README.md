@@ -54,7 +54,7 @@ The full Signal-Project consists of two main branches: the user-facing apps and 
 
 ### NGNIX with Certbot
 
-[dockerized docs](nginx)
+[dockerized docs](nginx-certbot)
 
 - [This docker image](https://github.com/JonasAlfredsson/docker-nginx-certbot/tree/master) handles the annoying bits of deploying NGINX and automates getting and renewing `https` certificates
 
