@@ -31,7 +31,6 @@ server_name example.1.com example.2.com;
 proxy_pass http://your-ip:your-port;
 ```
 
-1. configure the docker image with email, public ip, and url
-2. `docker-compose up`
+## Running the container
 
-[from](https://github.com/JonasAlfredsson/docker-nginx-certbot)
+`docker-compose up`
