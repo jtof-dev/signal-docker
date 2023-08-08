@@ -32,7 +32,7 @@ The full Signal-Project consists of two main branches: the user-facing apps and 
 
 ### Signal-Server
 
-[dockerized](Signal-Server/README.md)
+[dockerized](Signal-Server)
 
 - This docker container has not been updated to use an IAM compatible container. This will be a back-burnered project, but you can check out or work on it [in the `metadataproxy` folder](metadataproxy/README.md)
 
@@ -44,7 +44,7 @@ The full Signal-Project consists of two main branches: the user-facing apps and 
 
 ### Registration Service
 
-[dockerized](registration-service/README.md)
+[dockerized](registration-service)
 
 - Currently only a placeholder until we know more about registration-service
 
@@ -54,11 +54,17 @@ The full Signal-Project consists of two main branches: the user-facing apps and 
 
 ### NGNIX with Certbot
 
-[dockerized docs](nginx/documentation.md)
+[dockerized docs](nginx)
 
 - [This docker image](https://github.com/JonasAlfredsson/docker-nginx-certbot/tree/master) handles the annoying bits of deploying NGINX and automates getting and renewing `https` certificates
 
 - The image passes in any custom configuration files at runtime, allowing for ease of use in addition to being dead simple to set up
+
+### Redis-Cluster
+
+[dockerized docs](redis-cluster)
+
+- Very simple deployment (one script), with some added notes on manually verifying that everything works as intended
 
 ## To Do
 
