@@ -1,0 +1,11 @@
+version: '3'
+services:
+  metadataproxy:
+    build:
+      context: ./metadataproxy
+    ports:
+      - "8080:8080"
+    networks:
+      - signal
+    env_file:
+      - env.env

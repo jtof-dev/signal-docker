@@ -2,3 +2,4 @@ version: '3'
 services:
   registration-service:
     image: eclipse-temurin:17
+  command: ""

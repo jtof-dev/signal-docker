@@ -32,15 +32,23 @@ The full Signal-Project consists of two main branches: the user-facing apps and 
 
 ### Signal-Server
 
-[dockerized](Signal-Server/documentation.md)
+[dockerized](Signal-Server/README.md)
 
-- This docker container has not been updated to use an IAM compatible container. if YOU (uncle sam moment) want to implement this, you need to run [this docker image](https://github.com/lyft/metadataproxy) with some configuration alongside dockerized Signal-Server
+- This docker container has not been updated to use an IAM compatible container. This will be a back-burnered project, but you can check out or work on it [in the `metadataproxy` folder](metadataproxy/README.md)
 
-- This container also probably needs to change how it handles creating the image: as it is currently, it creates a new server with new server-specific certificates. Switching to a two-part build-then-run process would address this, as well as add the ability to pass in your pre-existing signal-server.jar at runtime
+  - This container also probably needs to change how it handles creating the image: as it is currently, it creates a new server with new server-specific certificates. Switching to a two-part build-then-run process would address this, as well as add the ability to pass in your pre-existing signal-server.jar at runtime
 
 [full instructions](https://github.com/JJTofflemire/Signal-Server)
 
 - This repo contains a LOT of information about the server, setting it up, running it and more (yippee). It has turned into a bit of a mess, though I have tried to put the easy bits first without removing any manual documentation
+
+### Registration Service
+
+[dockerized](registration-service/README.md)
+
+- Currently only a placeholder until we know more about registration-service
+
+[full instructions](https://github.com/JJTofflemire/registration-service)
 
 ## Others
 
