@@ -2,6 +2,4 @@
 .DS_Store
 Signal-Server/personal-config/*
 !Signal-Server/personal-config/config
-nginx-certbot/nginx-certbot.env
-nginx-certbot/user_conf.d/personal.conf
 metadataproxy/env.env
