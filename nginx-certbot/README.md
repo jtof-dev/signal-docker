@@ -57,9 +57,7 @@ And make sure you open all the relavent ports using port forwarding or `Security
 
 - After updating the `personal.conf` or `docker-compose.yml`, run `docker-compose down && docker-compose up -d` to restart and apply the changes
 
-- In the `docker-compose.yml`, the `volumes:` section has been commented out, which should force your certificates to be stored locally in `nginx-secrets` (which is already `.gitignore`d)
-
-  - If your certificates aren't there, you can manually print them like so:
+- You can get to your certificates like this:
 
 ```
 docker exec -it <name-of-container> bash
