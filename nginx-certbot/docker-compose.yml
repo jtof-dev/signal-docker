@@ -11,8 +11,8 @@ services:
       - 443:443
       - 442:442
     volumes:
-      - nginx_secrets:/etc/letsencrypt
+      - nginx-secrets:/etc/letsencrypt
       - ./user_conf.d:/etc/nginx/user_conf.d
 
-volumes:
-  nginx_secrets:
+# volumes:
+#  nginx_secrets:
