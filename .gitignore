@@ -5,3 +5,4 @@ Signal-Server/personal-config/*
 metadataproxy/env.env
 nginx-certbot/nginx-secrets/*
 !nginx-certbot/nginx-secrets/config
+registration-service/signal.pem
