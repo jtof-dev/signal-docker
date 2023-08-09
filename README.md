@@ -24,7 +24,9 @@ The full Signal-Project consists of two main branches: the user-facing apps and 
 
 - The [main server](https://github.com/JJTofflemire/Signal-Server) that manages E2E messaging compiles and runs without errors
   
-  - Functionality is undetermined - in order to test messaging between phones, [registration-service](https://github.com/JJTofflemire/registration-service) needs to be set up first
+  - Functionality is undetermined, as not all the kinks have been worked out between the server and the app
+  
+- [registration-service](https://github.com/JJTofflemire/registration-service) is fully functional and you can register numbers over `https` using Signal-Android
 
 - To find out where the project is going from here, check out [the To Do section in this repo](#to-do), or the `To Do` sections of any specific Signal repo to see what needs to be done in each of those
 

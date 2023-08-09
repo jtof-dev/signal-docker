@@ -18,7 +18,7 @@ To get started, you'll need a (hopefully static) ip address and a domain
 
 If this repo or this folder gets stale, [you might want to check](https://github.com/JonasAlfredsson/docker-nginx-certbot/blob/master/docs/dockerhub_tags.md) and see if there is a much newer stable version of nginx-certbot's docker image
 
-Add your email to the [nginx-certbot.env](nginx-certbot.env) file
+Add your email to the [nginx-certbot.env](nginx-certbot.env) file:
 
 ```
 CERTBOT_EMAIL=sample@email.com
@@ -38,6 +38,14 @@ ssl_certificate         /etc/letsencrypt/live/test-name/fullchain.pem;
 ssl_certificate_key     /etc/letsencrypt/live/test-name/privkey.pem;
 ssl_trusted_certificate /etc/letsencrypt/live/test-name/chain.pem;
 ```
+
+And make sure you open all the relavent ports using port forwarding or `Security groups` in EC2, as well as in `docker-compose.yml`
+
+- The default values in this nginx container / Signal-Server and registration-service:
+
+  - Signal-Server hosts on `localhost:8080` and nginx listens on `443`
+  
+  - registration-service hosts on `localhost:50051` and nginx listens on `442` (to prevent conflicts with Signal-Server)
 
 ## Running the container
 
