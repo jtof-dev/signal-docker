@@ -2,8 +2,8 @@ version: '3'
 services:
   registration-service:
     image: registration-service:1.0
-  working_dir: /app/registration-service/
-  volumes:
-    - ./signal.pem:/app/registration-service/src/main/resources/org/signal/registration/cli/signal.pem
-  ports:
-    - '127.0.0.1:50051:50051'
+    working_dir: /app/registration-service/
+    volumes:
+      - ./signal.pem:/app/registration-service/src/main/resources/org/signal/registration/cli/signal.pem
+    ports:
+     - '127.0.0.1:50051:50051'
