@@ -70,4 +70,10 @@ The full Signal-Project consists of two main branches: the user-facing apps and 
 
 ## To Do
 
-- Run, configure, and dockerize registation-service
+- Document DynamoDB
+- Fix registration-service-docker
+- Document registration-service-docker
+- Update documentation for registration-service
+- Completely fill out Signal-Android
+- Update Cognito / GCloud OAuth2.0 docs
+- Update AppConfig docs
