@@ -22,13 +22,31 @@ The full Signal-Project consists of two main branches: the user-facing apps and 
 
 **Progress:**
 
-- The [main server](https://github.com/JJTofflemire/Signal-Server) that manages E2E messaging compiles and runs without errors
+- The [main server](https://github.com/JJTofflemire/Signal-Server) that manages E2EE messaging compiles and runs without errors
   
-  - Functionality is undetermined, as not all the kinks have been worked out between the server and the app
+  - Untested, but fully functional
+  
+  - The server itself works, receiving and sending api requests and registering phone numbers
+  
+  - Can't test messaging because other unconfigured services are required for messaging to work
+  
+  - `zkparams` couldn't be generated properly and was cut out, but is probably required in other self-hosted dependencies
   
 - [registration-service](https://github.com/JJTofflemire/registration-service) is fully functional and you can register numbers over `https` using Signal-Android
 
-- To find out where the project is going from here, check out [the To Do section in this repo](#to-do), or the `To Do` sections of any specific Signal repo to see what needs to be done in each of those
+  - Relies on the dev environment, which is probably impractical for deployment, but only requied for the actual handshake of registering a phone number (everything is stored in DynamoDB anyway)
+
+- [storage-service](https://github.com/signalapp/storage-service) is a Signal-Server dependency that handles the secure storage of various bits of user information and encrypted messages
+
+  - Not started, but required to finish account creation, finding users to message, and possibly messaging as a whole
+  
+  - Extremely difficult to deploy - missing any documentation, including any build instructions or `sample.yml`'s to work off of
+
+- [SecureValueRecovery2](https://github.com/signalapp/SecureValueRecovery2) is the place where encrypted account recovery information is stored, locked behind the user's pin
+
+  - Not started, but required to finish account creation
+  
+  - Relatively easy to deploy - comes with thorough enough build instructions and a `sample.yml` to fill out
 
 ## Signal-Project Backend
 
@@ -42,13 +60,11 @@ The full Signal-Project consists of two main branches: the user-facing apps and 
 
 [full instructions](https://github.com/JJTofflemire/Signal-Server)
 
-- This repo contains a LOT of information about the server, setting it up, running it and more (yippee). It has turned into a bit of a mess, though I have tried to put the easy bits first without removing any manual documentation
+- This is the guide to follow to deploy Signal-Server in an EC2 instance
 
 ### Registration Service
 
 [dockerized](registration-service)
-
-- Currently only a placeholder until we know more about registration-service
 
 [full instructions](https://github.com/JJTofflemire/registration-service)
 
@@ -73,7 +89,6 @@ The full Signal-Project consists of two main branches: the user-facing apps and 
 - Document DynamoDB
 - Fix registration-service-docker
 - Document registration-service-docker
-- Update documentation for registration-service
 - Completely fill out Signal-Android
 - Update Cognito / GCloud OAuth2.0 docs
 - Update AppConfig docs
