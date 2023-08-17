@@ -91,4 +91,3 @@ The full Signal-Project consists of two main branches: the user-facing apps and 
 - Document registration-service-docker
 - Completely fill out Signal-Android
 - Update Cognito / GCloud OAuth2.0 docs
-- Update AppConfig docs
