@@ -66,6 +66,8 @@ The full Signal-Project consists of two main branches: the user-facing apps and 
 
 [dockerized](registration-service)
 
+- Currently not working despite being a very simple program to Dockerize. I am unsure why it doesn't work, but for the moment you will have to run `registration-service` on bare metal
+
 [full instructions](https://github.com/JJTofflemire/registration-service)
 
 ## Others
@@ -86,8 +88,9 @@ The full Signal-Project consists of two main branches: the user-facing apps and 
 
 ## To Do
 
-- Document DynamoDB
-- Fix registration-service-docker
-- Document registration-service-docker
+- Debug registration-service
+
+  - Currently unresponsive to any pings despite building and running without errors and reading changes in the `application.yml`
+
 - Completely fill out Signal-Android
-- Update Cognito / GCloud OAuth2.0 docs
+  - include reminders about gcloud oath2

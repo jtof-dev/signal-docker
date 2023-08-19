@@ -2,10 +2,5 @@ version: '3'
 services:
   registration-service:
     image: registration-service:1.0
-    working_dir: /app/registration-service/
-    volumes:
-      - ./fullchain.pem:src/main/resources/fullchain.pem
-      - ./privkey.pem:src/main/resources/privkey.pem
-      - ./application.yml:src/main/resources/application.yml
     ports:
-     - '127.0.0.1:50051:50051'
+     - '50051:50051'
