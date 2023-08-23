@@ -14,7 +14,30 @@ The full Signal-Project consists of two main branches: the user-facing apps and 
 
 - The nodes handle parts of Signal like registration, sending images, voice and video calls, etc. Packaging these functions into seperate servers allows for easy scalability in AWS, but for a local implementation they can all be dockerized and ran with the main server on the same system
 
-(add some pretty diagrams here if I am motivated)
+```
+                                      Messaging Dependencies & Implementation
+                                     ─────────────────────────────────────────
+
+         ┌────────────────────┐        ┌───────────────────────────────────┐       ┌─────────────────┐
+         │                    │        │                                   │       │                 │
+         │ Signal-Server      │◄──────►│ nginx                             │◄─────►│ Signal-Android  │
+         │ implemented in EC2 │        │ implemented in a docker container │       │ or iOS          │
+         │                    │        │                                   │       └─────────────────┘
+         └────────────────────┘        └───────────────────────────────────┘
+                                         ▲     ▲               ▲         ▲
+                                         │     │               │         │
+                                         │     │               │         │
+                                         │     │               │         │
+                   ┌─────────────────────┘     │               │         └─────────────────┐
+                   │                           │               │                           │
+                   ▼                           ▼               ▼                           ▼
+┌──────────────────────┐ ┌────────────────────────────┐ ┌────────────────────────────┐ ┌────────────────────────────┐
+│                      │ │                            │ │                            │ │                            │
+│ registration-service │ │ storage-service            │ │ backup-service             │ │ SecureValueRecoveryV2      │
+│ implemented in EC2   │ │ not implemented - required │ │ not implemented - required │ │ not implemented - required │
+│                      │ │                            │ │                            │ │                            │
+└──────────────────────┘ └────────────────────────────┘ └────────────────────────────┘ └────────────────────────────┘
+```
 
 ## Signal-Project Roadmap
 
