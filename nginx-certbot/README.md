@@ -47,6 +47,18 @@ And make sure you open all the relavent ports using port forwarding or `Security
   
   - registration-service hosts on `localhost:50051` and nginx listens on `442` (to prevent conflicts with Signal-Server)
 
+Signal also requires your to host your own `hcaptcha` landing page
+
+- There is an added `location` block inside `user_conf.d/personal.conf` that redirects `chat.your.domain/signalcaptchas` from the normal Signal-Server on port 443 to `signalcaptchas/index.html`
+
+  - The only configuration you need to do is add your sitekey you got from `hcaptcha` - if you haven't done this already, check out [this section](https://github.com/JJTofflemire/Signal-Server/blob/main/docs/signal-server-configuration.md#hcaptcha) of Signal-Server's documentation
+
+  - Paste the `sitekey` into line 16 of `index.html`:
+
+```
+data-sitekey="your-key"
+```
+
 ## Running the container
 
 `docker-compose up`
@@ -65,3 +77,7 @@ cd etc/letsencrypt/live/test-name/
 cat keys.pem
 exit
 ```
+
+## To Do
+
+- Update `user_conf.d/personal.conf` and replace the deprecated `listen 442 ssl http2;`

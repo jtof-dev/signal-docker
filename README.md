@@ -66,6 +66,8 @@ The full Signal-Project consists of two main branches: the user-facing apps and 
 
 [dockerized](registration-service)
 
+- The `Dockerfile` and `docker-compose.yml` appear to have the correct implementation, but even after exposing ports and port forwarding the server can't be pinged by public ip address
+
 [full instructions](https://github.com/JJTofflemire/registration-service)
 
 ## Others
