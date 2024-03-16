@@ -8,7 +8,7 @@ To get started, you'll need a (hopefully static) ip address and a domain
 
 - You'll need your [external ip address](https://wtfismyip.com/), though every time your router restarts this ip will change
 
-  - The easiest implementation is [using an elastic ip](https://github.com/JJTofflemire/Signal-Server/blob/main/docs/signal-server-configuration.md#aws-ec2) with your EC2 instance and running the server there (which is what this guide will assume)
+  - The easiest implementation is [using an elastic ip](https://github.com/jtof-dev/Signal-Server/blob/main/docs/signal-server-configuration.md#aws-ec2) with your EC2 instance and running the server there (which is what this guide will assume)
 
 - For a domain, any provider works fine, but `Route 53` is probably the easiest since it's already integrated into AWS (I already had a domain with [njal.la](https://njal.la))
 
@@ -51,7 +51,7 @@ Signal also requires your to host your own `hcaptcha` landing page
 
 - There is an added `location` block inside `user_conf.d/personal.conf` that redirects `chat.your.domain/signalcaptchas` from the normal Signal-Server on port 443 to `signalcaptchas/index.html`
 
-  - The only configuration you need to do is add your sitekey you got from `hcaptcha` - if you haven't done this already, check out [this section](https://github.com/JJTofflemire/Signal-Server/blob/main/docs/signal-server-configuration.md#hcaptcha) of Signal-Server's documentation
+  - The only configuration you need to do is add your sitekey you got from `hcaptcha` - if you haven't done this already, check out [this section](https://github.com/jtof-dev/Signal-Server/blob/main/docs/signal-server-configuration.md#hcaptcha) of Signal-Server's documentation
 
   - Paste the `sitekey` into line 16 of `index.html`:
 

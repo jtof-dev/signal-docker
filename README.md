@@ -10,7 +10,7 @@ The full Signal-Project consists of two main branches: the user-facing apps and 
 
 ### The backend
 
-- The backend consists of the large [Signal-Server](https://github.com/JJTofflemire/Signal-Server), the brains of the backend, and many small, scalable nodes that all listen on subdomains (chat.signal.org, storage.signal.org, etc)
+- The backend consists of the large [Signal-Server](https://github.com/jtof-dev/Signal-Server), the brains of the backend, and many small, scalable nodes that all listen on subdomains (chat.signal.org, storage.signal.org, etc)
 
 - The nodes handle parts of Signal like registration, sending images, voice and video calls, etc. Packaging these functions into seperate servers allows for easy scalability in AWS, but for a local implementation they can all be dockerized and ran with the main server on the same system
 
@@ -45,7 +45,7 @@ The full Signal-Project consists of two main branches: the user-facing apps and 
 
 **Progress:**
 
-- The [main server](https://github.com/JJTofflemire/Signal-Server) that manages E2EE messaging compiles and runs without errors
+- The [main server](https://github.com/jtof-dev/Signal-Server) that manages E2EE messaging compiles and runs without errors
   
   - Untested, but fully functional
   
@@ -55,7 +55,7 @@ The full Signal-Project consists of two main branches: the user-facing apps and 
   
   - `zkparams` couldn't be generated properly and was cut out, but is probably required in other self-hosted dependencies
   
-- [registration-service](https://github.com/JJTofflemire/registration-service) is fully functional and you can register numbers over `https` using Signal-Android
+- [registration-service](https://github.com/jtof-dev/registration-service) is fully functional and you can register numbers over `https` using Signal-Android
 
   - Relies on the dev environment, which is probably impractical for deployment, but only requied for the actual handshake of registering a phone number (everything is stored in DynamoDB anyway)
 
@@ -81,7 +81,7 @@ The full Signal-Project consists of two main branches: the user-facing apps and 
 
   - This container also probably needs to change how it handles creating the image: as it is currently, it creates a new server with new server-specific certificates. Switching to a two-part build-then-run process would address this, as well as add the ability to pass in your pre-existing signal-server.jar at runtime
 
-[full instructions](https://github.com/JJTofflemire/Signal-Server)
+[full instructions](https://github.com/jtof-dev/Signal-Server)
 
 - This is the guide to follow to deploy Signal-Server in an EC2 instance
 
@@ -93,7 +93,7 @@ The full Signal-Project consists of two main branches: the user-facing apps and 
 
 - Currently not working despite being a very simple program to Dockerize. I am unsure why it doesn't work, but for the moment you will have to run `registration-service` on bare metal
 
-[full instructions](https://github.com/JJTofflemire/registration-service)
+[full instructions](https://github.com/jtof-dev/registration-service)
 
 ## Others
 

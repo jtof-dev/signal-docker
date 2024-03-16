@@ -28,7 +28,7 @@ etc
 
 ## Configuration
 
-Folllow [/signal-server-configuration.md` from Main](https://github.com/JJTofflemire/Signal-Server/blob/main/docs/signal-server-configuration.md), and make sure to also follow the [Docker configuration](https://github.com/JJTofflemire/Signal-Server/blob/main/docs/signal-server-configuration.md#dockerized-signal-server-documentation)
+Folllow [/signal-server-configuration.md` from Main](https://github.com/jtof-dev/Signal-Server/blob/main/docs/signal-server-configuration.md), and make sure to also follow the [Docker configuration](https://github.com/jtof-dev/Signal-Server/blob/main/docs/signal-server-configuration.md#dockerized-signal-server-documentation)
 
 ## Starting the container
 
