@@ -1,5 +1,7 @@
 # Signal-Server Dockerized!
 
+The source files running Signal-Server in a docker container. At the moment, Signal-Server expects to be ran in an EC2 container, so this is the skeleton of what a Signal-Server could look like. Most likely, this Docker image needs to be rewritten to use [metadataproxy](https://github.com/lyft/metadataproxy), which I don't plan on doing.
+
 ## Compilation
 
 `cd Signal-Server`
@@ -28,7 +30,9 @@ etc
 
 ## Configuration
 
-Folllow [/signal-server-configuration.md` from Main](https://github.com/jtof-dev/Signal-Server/blob/main/docs/signal-server-configuration.md), and make sure to also follow the [Docker configuration](https://github.com/jtof-dev/Signal-Server/blob/main/docs/signal-server-configuration.md#dockerized-signal-server-documentation)
+- Folllow [/signal-server-configuration.md` from Main](https://github.com/jtof-dev/Signal-Server/blob/main/docs/signal-server-configuration.md), and make sure to also follow the [Docker configuration](https://github.com/jtof-dev/Signal-Server/blob/main/docs/signal-server-configuration.md#dockerized-signal-server-documentation)
+
+- Place your completed `config.yml` and `config-secrets-bundle.yml` in `personal-config/`
 
 ## Starting the container
 
