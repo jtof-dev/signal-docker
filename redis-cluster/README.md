@@ -62,3 +62,5 @@ Which assumes that you are in a folder named `Signal-Server`
 Which should erase all volumes created by the dockerized redis-cluster (and erease all data stored on the cluster)
 
 - Then rerun the first manual generation command
+
+- NOTE: there is a copy of redis-cluster's `docker-compose.yml` in both `redis-cluster/` and `Signal-Server/`. As far as I can tell (I don't remember why I did this), this folder is specifically for documentation, and redis cuslter should be ran from `Signal-Server/`
